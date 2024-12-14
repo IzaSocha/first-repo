@@ -1,5 +1,4 @@
-# Define the build configuration version
-apiVersion: cloudbuild.v1
+
 
 # Optional: Specify a name for the build configuration
 # name: my-build-config
