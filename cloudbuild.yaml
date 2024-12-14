@@ -1,3 +1,10 @@
+# Define the build configuration version
+apiVersion: cloudbuild.v1
+
+# Optional: Specify a name for the build configuration
+# name: my-build-config
+
+# Define the build steps
 steps:
   # Step 1: Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
@@ -7,8 +14,9 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'europe-west4-docker.pkg.dev/steam-capsule-444320-e6/hello-world-repo/hello-world-service']
 
+# Define the images to be built (optional, included for clarity)
 images:
   - 'europe-west4-docker.pkg.dev/steam-capsule-444320-e6/hello-world-repo/hello-world-service'
 
-build:
-  logsBucket: main-bucket12
+# Specify where to store build logs
+logsBucket: main-bucket12
