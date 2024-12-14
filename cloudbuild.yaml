@@ -9,3 +9,6 @@ steps:
 
 images:
   - 'europe-west4-docker.pkg.dev/steam-capsule-444320-e6/hello-world-repo/hello-world-service'
+
+build:
+  logsBucket: main-bucket12
