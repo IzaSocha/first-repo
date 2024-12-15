@@ -40,3 +40,6 @@ spec:
               secretKeyRef:
                 name: my-db-secret
                 key: cloud-sql-credentials
+        envFrom:
+          - secretRef:
+              name: my-app-secret
