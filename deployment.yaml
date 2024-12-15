@@ -24,3 +24,19 @@ spec:
           limits:
             cpu: "1"
             memory: "2Gi"
+        env:
+          - name: DB_HOST
+            value: 127.0.0.1
+          - name: DB_PORT
+            value: "3306"
+          - name: DB_USER
+            value: appdbuser
+      - name: cloud-sql-proxy
+        image: gcr.io/cloudsql-proxy/cloudsql-proxy
+        command: ["cloudsql-proxy", "-instances=steam-capsule-444320-e6:us-central1:app-db"]
+        env:
+          - name: CLOUDSQL_CREDENTIALS
+            valueFrom:
+              secretKeyRef:
+                name: my-db-secret
+                key: cloud-sql-credentials
