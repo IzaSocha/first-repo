@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pod-1
+  name: my-app-deployment
 spec:
   replicas: 1  # Adjust the number of replicas as needed
   selector:
     matchLabels:
-      app: pod-1
+      app: my-app
   template:
     metadata:
       labels:
-        app: pod-1
+        app: my-app
     spec:
       containers:
       - name: nginx
-        image: europe-west4-docker.pkg.dev/steam-capsule-444320-e6/hello-world-repo/hello-world-service:tag1  # Replace with your image name
+        image: europe-west4-docker.pkg.dev/steam-capsule-444320-e6/hello-world-repo/hello-world-service  # Replace with your image name
         ports:
         - containerPort: 80
         resources:
