@@ -5,11 +5,11 @@
 steps:
   # Step 1: Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'europe-west4-docker.pkg.dev/steam-capsule-444320-e6/hello-world-repo/hello-world-service:tag1', '.']
+    args: ['build', '-t', 'europe-west4-docker.pkg.dev/steam-capsule-444320-e6/hello-world-repo/hello-world-service', '.']
 
   # Step 2: Push the Docker image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'europe-west4-docker.pkg.dev/steam-capsule-444320-e6/hello-world-repo/hello-world-service:tag1']
+    args: ['push', 'europe-west4-docker.pkg.dev/steam-capsule-444320-e6/hello-world-repo/hello-world-service']
  
    # Step 3: Defining Kubernetes deployment
   - name: 'gcr.io/cloud-builders/kubectl'
@@ -27,7 +27,7 @@ steps:
 
 # Define the images to be built (optional, included for clarity)
 images:
-  - 'europe-west4-docker.pkg.dev/steam-capsule-444320-e6/hello-world-repo/hello-world-service:tag1'
+  - 'europe-west4-docker.pkg.dev/steam-capsule-444320-e6/hello-world-repo/hello-world-service'
 
 # Specify where to store build logs
 logsBucket: main-bucket12
