@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-1
+spec:
+  replicas: 1  # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: pod-1
+  template:
+    metadata:
+      labels:
+        app: pod-1
+    spec:
+      containers:
+      - name: nginx
+        image: europe-west4-docker.pkg.dev/steam-capsule-444320-e6/hello-world-repo/hello-world-service:tag1  # Replace with your image name
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "2Gi"
+          limits:
+            cpu: "1"
+            memory: "2Gi"
