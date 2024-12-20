@@ -21,10 +21,6 @@ steps:
       - -f
       - deployment.yaml
 
-
-
-
-
 # Define the images to be built (optional, included for clarity)
 images:
   - 'europe-west4-docker.pkg.dev/steam-capsule-444320-e6/hello-world-repo/hello-world-service'
